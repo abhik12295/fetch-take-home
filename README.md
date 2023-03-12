@@ -1,6 +1,8 @@
-User Login Behavior Processor
+Fetch Take Home Assessment:
 
-This application reads user login behavior data from an AWS SQS queue, masks certain fields for privacy, and writes the transformed data to a Postgres database.
+
+This application reads user_logins data from an AWS SQS queue, masks certain fields for privacy, and writes the transformed data to a Postgres database.
+
 Prerequisites
 
     Docker
@@ -21,9 +23,6 @@ To read messages from the AWS SQS queue, you can use the AWS CLI or a third-part
 Here's an example AWS CLI command to receive a single message from the queue:
 
     awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue
-
-
-Alternatively, if using localstack, you can interact with the local SQS service by making HTTP requests to http://localhost:4576. You can use a tool like curl or a library like requests in Python to send requests to the local SQS service
 
 Reading Data and Data structure: 
 
@@ -127,24 +126,25 @@ For reading JSON data from the SQS queue and transforming it before writing it t
         
  Where and how will your application run?
  
- For now I have run this on local system:
- 
- by configuring docker, AWSCLI and psql:
- 1: first logging in to docker:
-      sudo docker pull fetchdocker/data-takehome-postgres
-      #sudo docker run --name stuart_abhi -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d fetchdocker/data-takehome-postgres
-      sudo docker start stuart_abhi
-      sudo docker exec -it stuart_abhi bash
-      psql -U postgres
-      select * from user_logins
- 2: secondly connect with awscli to get data from api:
-      docker pull fetchdocker/data-takehome-localstack
-      sudo docker start s_abhi
-      awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue
+             For now I have run this on local system:
+
+             by configuring docker, AWSCLI and psql:
+             1: first logging in to docker:
+                  sudo docker pull fetchdocker/data-takehome-postgres
+                  #sudo docker run --name stuart_abhi -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d fetchdocker/data-takehome-postgres
+                  sudo docker start stuart_abhi
+                  sudo docker exec -it stuart_abhi bash
+                  psql -U postgres
+                  select * from user_logins
+             2: secondly connect with awscli to get data from api:
+                  docker pull fetchdocker/data-takehome-localstack
+                  sudo docker start s_abhi
+                  awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/login-queue
+             3: Run the fetch.py file on local system directly and then look for the update postgres on docker stuart_abhi using step 1: from above
       
  Once AWS and postgres started working: 
-    we can run the fetch.py file remotely on the local machine.
-    It will generate the masked value and store it in postgres.
+            we can run the fetch.py file remotely on the local machine.
+            It will generate the masked value and store it in postgres.
  
  Apart from that there was issue while putting the data in app_version column as it was INT type:
           #stored the highest value of app_version: say 3.0.1 -> stored 3 in column
