@@ -97,32 +97,3 @@ if records:
     conn.commit()
 
 conn.close()
-
-#
-# # Extract the relevant data from the message
-# if 'Messages' in response:
-#     message = response['Messages'][0]
-#     message_id = message['MessageId']
-#     receipt_handle = message['ReceiptHandle']
-#     body = message['Body']
-#
-#     # Convert the 'body' field to a JSON object
-#     body_json = json.loads(body)
-#
-#     # Mask the PII data in 'device_id' and 'ip'
-#     body_json['device_id'] = 'DEVICE_ID'
-#     body_json['ip'] = 'IP_ADDRESS'
-#
-#     # Update the 'body' field with the masked JSON
-#     body = json.dumps(body_json)
-#
-#     # Store the data in a dictionary
-#     data = {
-#         # "message_id": message_id,
-#         # "receipt_handle": receipt_handle,
-#         "body": body
-#     }
-#
-#     print(data)
-# else:
-#     print("No messages found in the queue.")
