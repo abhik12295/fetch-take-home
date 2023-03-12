@@ -264,3 +264,7 @@ For reading JSON data from the SQS queue and transforming it before writing it t
     The application is being run by a user or process with appropriate permissions to access the SQS queue and Postgres database.
 
     The data being processed by the application is not subject to any legal or regulatory restrictions that would prohibit its processing or storage in this manner.
+   
+Here is the database with masked_ip and masked_device_id through docker terminal bash:
+
+![1](https://user-images.githubusercontent.com/17993648/224561401-ac5fc9e8-b6cb-42a5-b81e-59068fa35c68.png)
