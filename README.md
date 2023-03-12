@@ -267,4 +267,5 @@ For reading JSON data from the SQS queue and transforming it before writing it t
    
 Here is the database with masked_ip and masked_device_id through docker terminal bash:
 
-![1](https://user-images.githubusercontent.com/17993648/224561401-ac5fc9e8-b6cb-42a5-b81e-59068fa35c68.png)
+![1](https://user-images.githubusercontent.com/17993648/224561563-14cc9fd9-d03c-4292-9b1d-e093b5056c0c.png)
+
