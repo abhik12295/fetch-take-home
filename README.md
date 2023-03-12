@@ -269,3 +269,8 @@ Here is the database with masked_ip and masked_device_id through docker terminal
 
 ![1](https://user-images.githubusercontent.com/17993648/224561563-14cc9fd9-d03c-4292-9b1d-e093b5056c0c.png)
 
+Here is the AWSCLI data 
+![2](https://user-images.githubusercontent.com/17993648/224561681-9dae420d-2bba-4a35-b4d2-ac71d9b2acb8.png)
+
+Here I am using python boto3, psycopg2 and hashlib for fetching data and masking
+![3](https://user-images.githubusercontent.com/17993648/224561688-ebe71ee7-ddd8-4d67-949c-0295cb664d5c.png)
