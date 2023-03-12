@@ -153,8 +153,9 @@ For reading JSON data from the SQS queue and transforming it before writing it t
             app_version = flattened_data['app_version']
             flattened_data['app_version'] = int(app_version.split(".")[0])
 
-    
-# I tried to put my application on docker using Dockerfile and with having some configuration to run it, but there was limitation of time, it was not done completely.
+      `Tried to put app on docker`
+        I tried to put my application on docker using Dockerfile and with having some configuration to run it, but there was limitation of time, 
+        it was not done completely.
         FROM python:3.8
 
         WORKDIR /app
